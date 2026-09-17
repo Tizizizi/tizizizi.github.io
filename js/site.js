@@ -23,57 +23,6 @@
     if (child) event.preventDefault();
   });
 
-  // Carry the navigation direction across static HTML documents.
-  try {
-    var arrival = JSON.parse(window.sessionStorage.getItem('jiang-page-transition'));
-    window.sessionStorage.removeItem('jiang-page-transition');
-    if (arrival && arrival.href === window.location.href && Date.now() - arrival.time < 10000) {
-      document.body.style.setProperty('--page-enter-x', arrival.direction > 0 ? '100%' : '-100%');
-      document.body.classList.add('is-page-entering');
-      window.setTimeout(function () { document.body.classList.remove('is-page-entering'); }, 320);
-    }
-  } catch (error) { /* Storage may be restricted when browsing local files. */ }
-  function navigationPosition(link) {
-    var list = link.closest('.nav-list');
-    var group = link.closest('.nav-list > li');
-    if (!list || !group) return [0, 0];
-    var column = Array.prototype.indexOf.call(list.children, group);
-    var submenu = link.closest('.submenu');
-    var row = submenu ? Array.prototype.indexOf.call(submenu.children, link.closest('li')) : 0;
-    return [column, row];
-  }
-  var navigationPending = false;
-  document.addEventListener('click', function (event) {
-    if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-    var link = event.target.closest('a');
-    if (!link || (!link.closest('.site-nav') && !link.closest('.site-brand')) || link.hasAttribute('download') || (link.target && link.target !== '_self')) return;
-    var destination = new URL(link.href, window.location.href);
-    var current = new URL(window.location.href);
-    if (destination.protocol !== current.protocol || destination.host !== current.host || !/\.html$/i.test(destination.pathname)) return;
-    if (destination.pathname === current.pathname && destination.search === current.search) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    event.preventDefault();
-    if (navigationPending) return;
-    navigationPending = true;
-    var selected = document.querySelector('.site-nav .submenu a[aria-current="page"]') || document.querySelector('.site-nav a[aria-current="page"]') || document.querySelector('.site-nav .nav-list > li.active > a');
-    var from = selected ? navigationPosition(selected) : [0, 0];
-    var to = navigationPosition(link);
-    var direction = link.closest('.site-brand') ? -1 : (to[0] === from[0] ? (to[1] >= from[1] ? 1 : -1) : (to[0] > from[0] ? 1 : -1));
-    document.body.classList.remove('is-page-entering');
-    document.body.style.setProperty('--page-leave-x', direction > 0 ? '-100%' : '100%');
-    try {
-      window.sessionStorage.setItem('jiang-page-transition', JSON.stringify({ href: destination.href, direction: direction, time: Date.now() }));
-    } catch (error) { /* Navigation still works without storage. */ }
-    document.body.classList.add('is-page-leaving');
-    window.setTimeout(function () { window.location.assign(destination.href); }, 220);
-  });
-  // Back/forward cache can restore a page while its outgoing animation is active.
-  window.addEventListener('pageshow', function (event) {
-    navigationPending = false;
-    document.body.classList.remove('is-page-leaving');
-    if (event.persisted) document.body.classList.remove('is-page-entering');
-  });
-
   var pageHeader = document.querySelector('.site-header');
   if (pageHeader) {
     var topButton = document.createElement('button');
@@ -277,7 +226,7 @@
     if (homeItem) homeItem.classList.add('active');
   }
   var menuToggle = document.querySelector('.menu-toggle');
-  var mobileQuery = window.matchMedia('(max-width: 880px)');
+  var mobileQuery = window.matchMedia('(max-width: 1090px)');
   var submenuItems = nav ? Array.from(nav.querySelectorAll('.has-submenu')) : [];
 
   function setSubmenu(item, expanded) {

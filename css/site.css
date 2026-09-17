@@ -175,23 +175,29 @@ body.site-page { margin:0; color:var(--text); background:var(--page-bg);caret-co
   .site-header { padding-top:4px; }
   .header-inner { width:calc(100% - 24px);max-width:none;min-height:96px;padding:12px 0;justify-content:center;align-items:center;border-bottom:1px solid var(--card-border);border-radius:14px; }
   .university-logo { height:70px;max-width:85vw; }
-  .menu-toggle { display:block;position:absolute;left:5px;top:50%;width:34px;height:34px;margin-top:-17px;padding:7px 5px;border:0;background:transparent; }
+  .menu-toggle { display:block;position:absolute;right:auto;left:10px;top:10px;z-index:3;width:34px;height:34px;margin:0;padding:9px 8px;border:0;border-radius:4px;background:#7f8589;box-shadow:0 2px 7px rgba(36,49,58,.18); }
   .menu-toggle>span:last-child { display:none; }
-  .menu-icon { display:block;width:22px;height:16px;position:relative;border-top:2px solid #666;border-bottom:2px solid #666; }
-  .menu-icon::before { content:"";position:absolute;left:0;top:5px;width:22px;border-top:2px solid #666; }
+  .menu-icon { display:block;width:18px;height:14px;position:relative;border-top:2px solid #fff;border-bottom:2px solid #fff;transition:border-color .2s ease; }
+  .menu-icon::before,.menu-icon::after { content:"";position:absolute;left:0;top:4px;width:18px;border-top:2px solid #fff;transition:transform .2s ease; }
+  .menu-toggle[aria-expanded="true"] .menu-icon { border-color:transparent; }
+  .menu-toggle[aria-expanded="true"] .menu-icon::before { transform:rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] .menu-icon::after { transform:rotate(-45deg); }
   .js .site-nav:not(.is-open) { display:none; }
-  .site-nav.is-open { display:block;position:fixed;inset:0 auto 0 0;z-index:1000;width:216px;overflow-y:auto;background:#252525;box-shadow:1px 0 7px rgba(0,0,0,.6); }
-  .site-nav.is-open .nav-inner { width:100%;max-width:none;border:0;border-radius:0;background:transparent;box-shadow:none; }
-  .nav-list { display:block;padding:0; }
-  .nav-list>li { display:grid;grid-template-columns:1fr 50px;border-bottom:1px solid #111; }
-  .nav-list>li>a { padding:7px 10px;color:#aaa;white-space:normal;font:16px/35px Arial,"Microsoft YaHei",sans-serif; }
-  .nav-list>li.active>a,.nav-list>li>a[aria-current="page"] { color:#ed1b24;background:#333;text-decoration:none; }
-  .nav-list>li>a:hover,.nav-list>li>a:active { color:#e7797e;background:#333;text-decoration:none; }
-  .submenu-toggle { width:50px;margin:0;color:transparent;opacity:1; }
-  .submenu-toggle::after { border-color:#aaa;margin:0 auto; }
-  .submenu { position:static;grid-column:1/-1;min-width:0;border:0;background:#333; }
-  .submenu a { height:auto;padding:7px 18px 7px 24px;color:#aaa;border-color:#222;text-align:left;white-space:normal;line-height:28px; }
-  .submenu a:hover,.submenu a[aria-current="page"] { color:#ed1b24;background:#444; }
+  .site-nav.is-open { display:block;position:absolute;inset:auto auto auto 12px;top:calc(100% - 3px);z-index:1000;width:min(150px,calc(100vw - 24px));overflow:visible;background:transparent; }
+  .site-nav.is-open::before { content:"";position:absolute;left:18px;top:-9px;z-index:2;width:18px;height:18px;border:1px solid #e2e5e7;border-right:0;border-bottom:0;background:#fff;transform:rotate(45deg); }
+  .site-nav.is-open .nav-inner { width:100%;max-width:none;max-height:calc(100vh - 125px);overflow-y:auto;border:1px solid #e2e5e7;border-radius:12px;background:#fff;box-shadow:0 9px 28px rgba(36,49,58,.22); }
+  .nav-list { display:block;padding:8px 0; }
+  .nav-list>li { display:grid;grid-template-columns:1fr 34px;border-bottom:1px solid #eceeef; }
+  .nav-list>li:last-child { border-bottom:0; }
+  .nav-list>li>a { padding:7px 12px;color:#555;white-space:normal;font:15px/36px Arial,"Microsoft YaHei",sans-serif; }
+  .nav-list>li>a::before { display:none; }
+  .nav-list>li.active>a,.nav-list>li>a[aria-current="page"] { color:#c53d32;background:#fff7f5;text-decoration:none; }
+  .nav-list>li>a:hover,.nav-list>li>a:active { color:#d7685d;background:#fafafa;text-decoration:none; }
+  .submenu-toggle { width:34px;margin:0;color:transparent;opacity:1; }
+  .submenu-toggle::after { border-color:#777;margin:0 auto; }
+  .submenu { position:static;grid-column:1/-1;min-width:0;border:0;background:#f6f7f8; }
+  .submenu a { height:auto;padding:7px 18px 7px 28px;color:#62676b;border-color:#e5e8ea;text-align:left;white-space:normal;line-height:30px; }
+  .submenu a:hover,.submenu a[aria-current="page"] { color:#c53d32;background:#fff; }
   .site-main { width:calc(100% - 24px);max-width:none;margin-top:9px; }
   .site-page-home .site-main { width:calc(100% - 24px);max-width:none;margin-top:9px; }
   .home-grid { grid-template-columns:1fr;height:auto; }
@@ -236,6 +242,7 @@ body.site-page { margin:0; color:var(--text); background:var(--page-bg);caret-co
 }
 @media (max-width:550px) {
   .header-inner { min-height:96px;padding-block:12px; }
+  .university-logo { width:auto;height:auto;max-width:60vw;max-height:70px; }
   .article-content p { text-indent:inherit!important;word-break:break-all!important; }
 }
 @media (max-width:1000px) {
