@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 320" role="img" aria-labelledby="t d">
+  <title id="t">油水分层与两个含水相的比较</title><desc id="d">左侧容器显示油水两层，右侧容器显示组分浓度不同的两个含水相。</desc><rect width="520" height="320" rx="18" fill="#edf2f3"/>
+  <g stroke="#66717f" stroke-width="4" fill="none"><path d="M51 49v209h179V49"/><path d="M289 49v209h179V49"/></g><path d="M53 139h175v117H53z" fill="#92c9df"/><path d="M53 51h175v88H53z" fill="#e4c25c"/><path d="M291 51h175v205H291z" fill="#b8dce6"/><path d="M291 177h175v79H291z" fill="#78b6c5"/>
+  <g fill="#c93c74"><circle cx="320" cy="201" r="8"/><circle cx="352" cy="228" r="8"/><circle cx="392" cy="194" r="8"/><circle cx="436" cy="232" r="8"/><circle cx="333" cy="244" r="8"/><circle cx="410" cy="216" r="8"/></g><g fill="#0b7c74"><circle cx="326" cy="94" r="7"/><circle cx="402" cy="123" r="7"/><circle cx="440" cy="82" r="7"/></g><text x="140" y="293" text-anchor="middle" fill="#616b7c" font-family="Arial,sans-serif" font-size="19">油–水</text><text x="378" y="293" text-anchor="middle" fill="#616b7c" font-family="Arial,sans-serif" font-size="19">两个含水相</text>
+</svg>

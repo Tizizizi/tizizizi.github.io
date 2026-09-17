@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 320" role="img" aria-labelledby="t d">
+  <title id="t">液液相分离相图</title><desc id="d">双节线将一相区与两相区分开。</desc><rect width="520" height="320" rx="18" fill="#edf2f3"/>
+  <path d="M75 265h385M75 265V42" fill="none" stroke="#66717f" stroke-width="4"/><path d="M128 257C163 99 339 79 414 257" fill="#0b7c74" fill-opacity=".14" stroke="#0b7c74" stroke-width="5"/>
+  <text x="270" y="191" text-anchor="middle" fill="#0b7c74" font-family="Arial,sans-serif" font-size="24">两相区</text><text x="355" y="72" fill="#616b7c" font-family="Arial,sans-serif" font-size="20">一相区</text>
+  <g fill="#c93c74"><circle cx="205" cy="220" r="19"/><circle cx="264" cy="163" r="28"/><circle cx="334" cy="222" r="14"/></g><text x="237" y="301" fill="#616b7c" font-family="Arial,sans-serif" font-size="17">组成 / 浓度</text><text x="28" y="170" fill="#616b7c" font-family="Arial,sans-serif" font-size="17" transform="rotate(-90 28 170)">环境条件</text>
+</svg>

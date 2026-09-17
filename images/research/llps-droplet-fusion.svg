@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 430" role="img" aria-labelledby="t d">
+  <title id="t">液滴形成与融合示意图</title><desc id="d">三个青绿色液滴位于深色背景中，其中两个液滴正在靠近。</desc>
+  <defs><radialGradient id="g"><stop offset="0" stop-color="#d5fff5"/><stop offset=".3" stop-color="#74d9c7"/><stop offset=".68" stop-color="#237d77"/><stop offset="1" stop-color="#11323a"/></radialGradient><radialGradient id="bg"><stop stop-color="#173c43"/><stop offset="1" stop-color="#0d1220"/></radialGradient></defs>
+  <rect width="600" height="430" rx="24" fill="url(#bg)"/><circle cx="222" cy="205" r="106" fill="url(#g)" stroke="#5fe3c8" stroke-opacity=".55"/><circle cx="415" cy="235" r="82" fill="url(#g)" stroke="#5fe3c8" stroke-opacity=".55"/><circle cx="416" cy="86" r="35" fill="url(#g)" stroke="#5fe3c8" stroke-opacity=".55"/><path d="M318 211c21-10 34-8 47 0" fill="none" stroke="#5fe3c8" stroke-width="4" stroke-linecap="round" stroke-dasharray="7 9"/><path d="m358 199 15 12-16 11" fill="none" stroke="#5fe3c8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

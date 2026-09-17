@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 340" role="img" aria-labelledby="t d">
+  <title id="t">三类凝聚体界面</title><desc id="d">凝聚体水界面、油凝聚体水复合界面及凝聚体固体界面。</desc><rect width="560" height="340" rx="18" fill="#0d1220"/>
+  <g transform="translate(30 58)"><circle cx="78" cy="92" r="62" fill="#78294e" stroke="#76c9bd" stroke-width="13"/><text x="78" y="188" fill="#dbe7e8" text-anchor="middle" font-family="Arial,sans-serif" font-size="16">凝聚体–水</text></g>
+  <g transform="translate(190 58)"><circle cx="88" cy="92" r="64" fill="#d6ad4d" stroke="#c93c74" stroke-width="15"/><circle cx="88" cy="92" r="78" fill="none" stroke="#76c9bd" stroke-width="5"/><text x="88" y="188" fill="#dbe7e8" text-anchor="middle" font-family="Arial,sans-serif" font-size="16">复合界面</text></g>
+  <g transform="translate(380 58)"><path d="M12 148h140" stroke="#a8b2bd" stroke-width="8"/><path d="M28 145c8-88 105-88 113 0z" fill="#78294e" stroke="#76c9bd" stroke-width="6"/><path d="M30 144a53 53 0 0 1 17-39" fill="none" stroke="#fff" stroke-width="3"/><text x="82" y="188" fill="#dbe7e8" text-anchor="middle" font-family="Arial,sans-serif" font-size="16">凝聚体–固体</text></g>
+</svg>
