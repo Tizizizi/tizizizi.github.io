@@ -1,0 +1,53 @@
+/* 容器设置 */
+    .member-grid-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    /* 每一个人的卡片设置 */
+    .member-card {
+        box-sizing: border-box;
+        padding: 10px;
+        text-align: center;
+        /* 默认电脑端：宽度25%，即一行4个 */
+        width: 25%; 
+    }
+
+    /* 图片控制 */
+    .member-card img {
+        width: 100%;
+        max-width: 180px; /* 限制图片最大宽度，防止变得过大 */
+        height: auto;
+        display: block;
+        margin: 0 auto 10px auto; /* 图片居中 */
+        object-fit: cover; /* 保持比例 */
+    }
+
+    /* 文字样式 */
+    .member-name {
+        font-family: arial, helvetica, sans-serif;
+        font-size: 18px; /* 稍微调小一点字号适应手机，原20px可能略大 */
+        color: #0070c0;
+        margin: 5px 0;
+        line-height: 1.2;
+    }
+    .member-info {
+        font-family: arial, helvetica, sans-serif;
+        font-size: 16px;
+        color: #333;
+        margin: 0;
+    }
+
+    /* 📱 手机端适配 (屏幕宽度小于768px时) */
+    @media screen and (max-width: 768px) {
+        .member-card {
+            width: 50%; /* 手机上一行显示2个，整齐且图片不会太大 */
+        }
+        .member-name {
+            font-size: 16px; /* 手机上字体再小一点 */
+        }
+    }
+

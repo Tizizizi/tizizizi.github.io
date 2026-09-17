@@ -1,0 +1,16 @@
+.baidu-map {
+  width: 100%;
+  margin: 10px auto 0;
+}
+
+.baidu-map iframe {
+  display: block;
+  width: 100%;
+  height: 200px;
+  border: 0;
+}
+
+.map-fallback {
+  margin: 8px 0 0;
+  text-align: center;
+}
